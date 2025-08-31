@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 
 const Header: React.FC = () => {
@@ -101,9 +101,10 @@ const Header: React.FC = () => {
   }
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-transparent sticky top-0 z-10">
+    <nav className="flex items-center justify-between p-4 bg-transparent sticky top-0 z-50">
       <div className="flex-1">
-        <div className="inline-block bg-black text-white px-3 py-2 text-2xl font-bold rounded-md select-none">
+        <Link to="/" aria-label="Go to home" className="inline-block no-underline">
+          <div className="bg-black text-white px-3 py-2 text-2xl font-bold rounded-md select-none">
           <div
             ref={textRef}
             className="tracking-wide"
@@ -126,7 +127,8 @@ const Header: React.FC = () => {
               ))}
             </span>
           </div>
-        </div>
+          </div>
+        </Link>
       </div>
       <div className="flex-1 flex justify-center space-x-4">
         <NavLink 
